@@ -1,0 +1,26 @@
+# Backend runtime data
+backend/data/
+backend/phibio-server
+backend/*.exe
+
+# Node
+node_modules/
+
+# Expo
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/expo-env.d.ts
+mobile/.env.local
+mobile/ios/
+mobile/android/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+*.pem
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision

@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "Phibio",
+    "slug": "phibio",
+    "scheme": "phibio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FFFFFF",
+    "primaryColor": "#0E7C86",
+    "description": "Phibio – Biotechnology Inspired by Nature. Products, news and contact information of Phibio GmbH.",
+    "assetBundlePatterns": ["assets/*"],
+    "locales": {
+      "en": "./locales/en.json",
+      "tr": "./locales/tr.json"
+    },
+    "ios": {
+      "bundleIdentifier": "de.phibio.app",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleLocalizations": ["en", "tr"],
+        "CFBundleDevelopmentRegion": "en"
+      }
+    },
+    "android": {
+      "package": "de.phibio.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#0E7C86",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": []
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0E7C86"
+        }
+      ],
+      [
+        "expo-localization",
+        {
+          "supportedLocales": ["en", "tr"]
+        }
+      ]
+    ]
+  }
+}

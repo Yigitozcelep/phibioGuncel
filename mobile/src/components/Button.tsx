@@ -9,7 +9,8 @@ type IconName = React.ComponentProps<typeof Ionicons>['name'];
 interface Props {
   label: string;
   onPress: () => void;
-  variant?: 'primary' | 'outline' | 'ghost' | 'light';
+  /** `ghostLight` is the transparent variant for dark/teal backgrounds. */
+  variant?: 'primary' | 'outline' | 'ghost' | 'ghostLight' | 'light';
   icon?: IconName;
   iconRight?: IconName;
   loading?: boolean;
@@ -20,6 +21,7 @@ interface Props {
   /** Full-width block button. */
   block?: boolean;
   small?: boolean;
+  testID?: string;
 }
 
 export function Button({
@@ -35,14 +37,20 @@ export function Button({
   style,
   block = false,
   small = false,
+  testID,
 }: Props) {
   const textColor =
-    variant === 'primary' ? colors.white : variant === 'light' ? colors.primaryDark : colors.primary;
+    variant === 'primary' || variant === 'ghostLight'
+      ? colors.white
+      : variant === 'light'
+        ? colors.primaryDark
+        : colors.primary;
   const inactive = disabled || loading;
   return (
     <Pressable
       onPress={onPress}
       disabled={inactive}
+      testID={testID}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel ?? label}
       accessibilityHint={accessibilityHint}
@@ -51,7 +59,7 @@ export function Button({
         styles.base,
         variant === 'primary' && styles.primary,
         variant === 'outline' && styles.outline,
-        variant === 'ghost' && styles.ghost,
+        (variant === 'ghost' || variant === 'ghostLight') && styles.ghost,
         variant === 'light' && styles.light,
         small && styles.small,
         block && styles.block,

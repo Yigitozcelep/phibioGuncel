@@ -14,6 +14,7 @@ function LegalRow({ kind, label, last = false }: { kind: LegalKind; label: strin
   return (
     <Pressable
       onPress={() => nav.push({ name: 'legal', kind })}
+      testID={`legal-${kind}`}
       accessibilityRole="button"
       accessibilityLabel={label}
       style={({ pressed }) => [styles.legalRow, !last && styles.legalRowBorder, pressed && styles.pressed]}
@@ -39,7 +40,8 @@ function AboutBody({ bundle }: { bundle: Bundle }) {
   return (
     <ScreenScroll refresh>
       <View style={styles.intro}>
-        <Text style={styles.kicker}>{site.companyName}</Text>
+        {/* Brand name: locale-independent casing (Turkish rules would give "PHİBİO"). */}
+        <Text style={styles.kicker}>{site.companyName.toUpperCase()}</Text>
         <Text style={styles.title} accessibilityRole="header">
           {title}
         </Text>
@@ -138,7 +140,6 @@ const styles = StyleSheet.create({
   kicker: {
     ...type.label,
     color: colors.primary,
-    textTransform: 'uppercase',
   },
   title: {
     ...type.h1,

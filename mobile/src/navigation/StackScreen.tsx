@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, useWindowDimensions } from 'react-native';
 
-import { colors } from '../theme';
+import { colors, USE_NATIVE_DRIVER } from '../theme';
 
 const DURATION_MS = 250;
 
@@ -25,7 +25,7 @@ export function StackScreen({ closing, onClosed, children }: Props) {
     const animation = Animated.timing(progress, {
       toValue: closing ? 1 : 0,
       duration: DURATION_MS,
-      useNativeDriver: true,
+      useNativeDriver: USE_NATIVE_DRIVER,
     });
     animation.start(({ finished }) => {
       if (closing && finished) onClosedRef.current();

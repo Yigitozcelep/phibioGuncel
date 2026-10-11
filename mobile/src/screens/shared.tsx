@@ -37,7 +37,7 @@ export function ContentGate({ skeleton, children }: GateProps) {
   if (bundle) return <>{children(bundle)}</>;
   if (status === 'error') {
     return (
-      <View style={styles.fill}>
+      <View style={[styles.fill, styles.centered]}>
         <ErrorState
           error={error}
           message={error?.kind === 'network' ? t.errors.noCache : undefined}
@@ -103,6 +103,9 @@ const styles = StyleSheet.create({
   fill: {
     flex: 1,
     backgroundColor: colors.background,
+  },
+  centered: {
+    justifyContent: 'center',
   },
   scrollContent: {
     paddingBottom: spacing.xxxl,

@@ -18,7 +18,7 @@ import {
   Skeleton,
   tel,
 } from '../components';
-import { useL, useT } from '../i18n';
+import { useL, useT, useUpper } from '../i18n';
 import { Header, useNavigation } from '../navigation';
 import { colors, isAreaKey, radii, spacing, type } from '../theme';
 import { ContentGate, OfflineNotice, ScreenScroll, screenStyles } from './shared';
@@ -44,17 +44,38 @@ function HomeSkeleton() {
   );
 }
 
+const HERO_FADE_STEPS = 6;
+const HERO_BAND_ALPHA = 0.5;
+
+/**
+ * Stepped darkening between the image and the hero copy. Uploaded hero
+ * images may carry their own text; with the base overlay alone it would show
+ * through the subtitle. Plain views, so no gradient dependency is needed.
+ */
+function HeroFade() {
+  return (
+    <View pointerEvents="none" accessible={false}>
+      {Array.from({ length: HERO_FADE_STEPS }, (_, i) => {
+        const alpha = ((i + 1) / (HERO_FADE_STEPS + 1)) * HERO_BAND_ALPHA;
+        return <View key={i} style={[styles.heroFadeStep, { backgroundColor: `rgba(5, 32, 36, ${alpha.toFixed(3)})` }]} />;
+      })}
+    </View>
+  );
+}
+
 function Hero({ bundle }: { bundle: Bundle }) {
   const l = useL();
   const t = useT();
+  const upper = useUpper();
   const nav = useNavigation();
   const { site } = bundle;
-  const slogan = l(site.slogan);
+  const slogan = upper(l(site.slogan));
   const title = l(site.heroTitle) || site.companyName;
   const subtitle = l(site.heroSubtitle);
   return (
     <RemoteImage image={site.heroImage} style={styles.hero} iconSize={0}>
       <View style={styles.heroOverlay} />
+      <HeroFade />
       <View style={styles.heroContent}>
         {slogan ? <Text style={styles.heroSlogan}>{slogan}</Text> : null}
         <Text style={styles.heroTitle} accessibilityRole="header">
@@ -218,7 +239,7 @@ function ContactStrip({ bundle }: { bundle: Bundle }) {
       </View>
       <Button
         label={t.tabs.contact}
-        variant="ghost"
+        variant="ghostLight"
         iconRight="chevron-forward"
         onPress={() => nav.switchTab('contact')}
         style={styles.contactMore}
@@ -267,16 +288,19 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFill,
     backgroundColor: colors.overlay,
   },
+  heroFadeStep: {
+    height: 10,
+  },
   heroContent: {
+    backgroundColor: `rgba(5, 32, 36, ${HERO_BAND_ALPHA})`,
     padding: spacing.xxl,
-    paddingTop: spacing.huge,
+    paddingTop: spacing.lg,
     gap: spacing.sm,
   },
   heroSlogan: {
     ...type.label,
     fontSize: 13,
     color: colors.mint,
-    textTransform: 'uppercase',
   },
   heroTitle: {
     ...type.display,
@@ -343,8 +367,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
   },
   contactButton: {
+    // Wide enough for "Yol tarifi" / "Directions" on one line: two per row, the third full width.
     flexGrow: 1,
-    flexBasis: 100,
+    flexBasis: 140,
+    paddingHorizontal: spacing.md,
   },
   contactMore: {
     marginHorizontal: spacing.sm,

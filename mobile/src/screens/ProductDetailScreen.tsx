@@ -98,6 +98,7 @@ function ProductBody({ product }: { product: Product }) {
                 <Pressable
                   key={img.id || i}
                   onPress={() => setViewerIndex(i)}
+                  testID={`gallery-${i}`}
                   accessibilityRole="imagebutton"
                   accessibilityLabel={l(img.alt) || t.common.imageOf(i + 1, gallery.length)}
                   accessibilityHint={t.products.openGalleryImage}

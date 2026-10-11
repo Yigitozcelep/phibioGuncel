@@ -38,13 +38,13 @@ interface ErrorStateProps {
 export function ErrorState({ error, message, onRetry, retrying = false, compact = false }: ErrorStateProps) {
   const t = useT();
   return (
-    <View style={[styles.state, compact && styles.stateCompact]} accessibilityRole="alert">
+    <View style={[styles.state, compact && styles.stateCompact]} accessibilityRole="alert" testID="error-state">
       <View style={[styles.iconCircle, { backgroundColor: colors.dangerSoft }]}>
         <Ionicons name="alert-circle-outline" size={32} color={colors.danger} />
       </View>
       <Text style={styles.title}>{t.errors.title}</Text>
       <Text style={styles.message}>{message ?? errorMessage(error, t)}</Text>
-      {onRetry && <Button label={t.common.retry} icon="refresh" onPress={onRetry} loading={retrying} />}
+      {onRetry && <Button label={t.common.retry} icon="refresh" onPress={onRetry} loading={retrying} testID="error-retry" />}
     </View>
   );
 }
@@ -77,12 +77,13 @@ interface OfflineBannerProps {
 export function OfflineBanner({ onRetry, retrying = false }: OfflineBannerProps) {
   const t = useT();
   return (
-    <View style={styles.banner} accessibilityRole="alert" accessibilityLiveRegion="polite">
+    <View style={styles.banner} accessibilityRole="alert" accessibilityLiveRegion="polite" testID="offline-banner">
       <Ionicons name="cloud-offline-outline" size={20} color={colors.warning} />
       <Text style={styles.bannerText}>{t.offline.banner}</Text>
       <Pressable
         onPress={onRetry}
         disabled={retrying}
+        testID="offline-retry"
         accessibilityRole="button"
         accessibilityLabel={t.offline.retry}
         hitSlop={6}

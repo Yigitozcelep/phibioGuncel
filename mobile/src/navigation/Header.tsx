@@ -33,6 +33,7 @@ export function LanguageToggle({ onDark = true }: { onDark?: boolean }) {
           <Pressable
             key={code}
             onPress={() => setLang(code)}
+            testID={`lang-${code}`}
             accessibilityRole="radio"
             accessibilityState={{ checked: active, selected: active }}
             accessibilityLabel={code === 'tr' ? 'Türkçe' : 'English'}
@@ -69,6 +70,7 @@ export function Header({ title, back = false, right, hideLanguage = false }: Pro
         {back ? (
           <Pressable
             onPress={() => nav.pop()}
+            testID="header-back"
             accessibilityRole="button"
             accessibilityLabel={t.common.back}
             hitSlop={8}

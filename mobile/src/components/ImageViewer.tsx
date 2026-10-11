@@ -50,7 +50,7 @@ export function ImageViewer({ images, index, onClose }: Props) {
 
   return (
     <Modal visible={visible} animationType="fade" onRequestClose={onClose} onShow={jumpToIndex} statusBarTranslucent>
-      <View style={styles.backdrop}>
+      <View style={styles.backdrop} testID="image-viewer">
         <ScrollView
           ref={scrollRef}
           horizontal
@@ -76,6 +76,7 @@ export function ImageViewer({ images, index, onClose }: Props) {
           <Text style={styles.counter}>{t.common.imageOf(current + 1, images.length)}</Text>
           <Pressable
             onPress={onClose}
+            testID="viewer-close"
             accessibilityRole="button"
             accessibilityLabel={t.common.close}
             hitSlop={8}

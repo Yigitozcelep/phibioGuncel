@@ -110,6 +110,25 @@ export function useL(): (ls: LocalizedString | null | undefined) => string {
 }
 
 const INTL_LOCALE: Record<Lang, string> = { tr: 'tr-TR', en: 'en-GB' };
+
+/**
+ * Upper-cases a label for the active language. CSS/`textTransform` upper-casing
+ * is locale-blind and turns Turkish "i" into "I" ("Ortopedi" → "ORTOPEDI");
+ * the Turkish rule needs "İ" ("ORTOPEDİ").
+ */
+export function upper(text: string, lang: Lang): string {
+  try {
+    return text.toLocaleUpperCase(INTL_LOCALE[lang]);
+  } catch {
+    return text.toUpperCase();
+  }
+}
+
+/** `upper` bound to the active language. */
+export function useUpper(): (text: string) => string {
+  const { lang } = useLanguageContext();
+  return useCallback((text: string) => upper(text, lang), [lang]);
+}
 const formatterCache: Partial<Record<Lang, Intl.DateTimeFormat | null>> = {};
 
 function getFormatter(lang: Lang): Intl.DateTimeFormat | null {

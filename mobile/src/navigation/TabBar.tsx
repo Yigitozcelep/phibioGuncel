@@ -37,6 +37,7 @@ export function TabBar({ activeTab, onPress }: Props) {
           <Pressable
             key={tab}
             onPress={() => onPress(tab)}
+            testID={`tab-${tab}`}
             accessibilityRole="tab"
             accessibilityLabel={t.tabs[tab]}
             accessibilityState={{ selected: active }}

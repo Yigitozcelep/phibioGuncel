@@ -22,6 +22,7 @@ export function Chips<K extends string>({ options, value, onChange, accessibilit
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
+      style={styles.scroll}
       contentContainerStyle={styles.row}
       accessibilityRole="radiogroup"
       accessibilityLabel={accessibilityLabel}
@@ -54,6 +55,12 @@ export function Chips<K extends string>({ options, value, onChange, accessibilit
 }
 
 const styles = StyleSheet.create({
+  scroll: {
+    // ScrollView defaults to flexGrow/flexShrink 1; in a column next to a long
+    // list the chips row would otherwise be squeezed to a few pixels.
+    flexGrow: 0,
+    flexShrink: 0,
+  },
   row: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,

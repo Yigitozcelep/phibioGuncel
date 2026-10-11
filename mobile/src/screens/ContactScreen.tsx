@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import type { Bundle, SocialLink } from '../api/types';
 import { Button, Card, CardSkeleton, displayUrl, EmptyState, mailto, mapsUrl, openExternal, tel } from '../components';
-import { useL, useT } from '../i18n';
+import { useL, useT, useUpper } from '../i18n';
 import { Header } from '../navigation';
 import { colors, radii, spacing, TOUCH_TARGET, type } from '../theme';
 import { ContentGate, OfflineNotice, ScreenScroll, screenStyles } from './shared';
@@ -28,6 +28,7 @@ interface RowProps {
 
 function ContactRow({ icon, label, lines, action }: RowProps) {
   const t = useT();
+  const upper = useUpper();
   return (
     <Card style={styles.card}>
       <View style={styles.cardRow}>
@@ -35,7 +36,7 @@ function ContactRow({ icon, label, lines, action }: RowProps) {
           <Ionicons name={icon} size={22} color={colors.primary} />
         </View>
         <View style={styles.cardText}>
-          <Text style={styles.cardLabel}>{label}</Text>
+          <Text style={styles.cardLabel}>{upper(label)}</Text>
           {lines.map((line, i) => (
             <Text key={i} style={styles.cardValue} selectable>
               {line}
@@ -86,6 +87,7 @@ function SocialRow({ links }: { links: SocialLink[] }) {
 function ContactBody({ bundle }: { bundle: Bundle }) {
   const t = useT();
   const l = useL();
+  const upper = useUpper();
   const { contact, social } = bundle.site;
   const email = contact.email.trim();
   const phone = contact.phone.trim();
@@ -141,7 +143,7 @@ function ContactBody({ bundle }: { bundle: Bundle }) {
       ) : null}
       {links.length > 0 ? (
         <Card style={styles.card}>
-          <Text style={styles.cardLabel}>{t.contact.social}</Text>
+          <Text style={styles.cardLabel}>{upper(t.contact.social)}</Text>
           <SocialRow links={links} />
         </Card>
       ) : null}
@@ -202,7 +204,6 @@ const styles = StyleSheet.create({
   cardLabel: {
     ...type.label,
     color: colors.muted,
-    textTransform: 'uppercase',
     marginBottom: spacing.xxs,
   },
   cardValue: {

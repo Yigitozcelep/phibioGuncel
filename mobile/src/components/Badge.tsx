@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 
-import { useT } from '../i18n';
+import { useT, useUpper } from '../i18n';
 import { areaColor, colors, radii, spacing, type } from '../theme';
 
 interface Props {
@@ -21,13 +21,14 @@ function tint(hex: string): string {
 }
 
 export function Badge({ label, color = colors.primary, solid = false, style }: Props) {
+  const upper = useUpper();
   return (
     <View
       style={[styles.badge, { backgroundColor: solid ? color : tint(color) }, style]}
       accessibilityRole="text"
     >
       <Text style={[styles.text, { color: solid ? colors.white : color }]} numberOfLines={1}>
-        {label}
+        {upper(label)}
       </Text>
     </View>
   );
@@ -50,6 +51,5 @@ const styles = StyleSheet.create({
   },
   text: {
     ...type.label,
-    textTransform: 'uppercase',
   },
 });

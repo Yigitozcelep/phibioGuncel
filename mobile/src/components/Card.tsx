@@ -11,14 +11,16 @@ interface Props {
   accessibilityHint?: string;
   /** Flat variant without shadow (used inside tinted sections). */
   flat?: boolean;
+  testID?: string;
 }
 
-export function Card({ children, style, onPress, accessibilityLabel, accessibilityHint, flat = false }: Props) {
+export function Card({ children, style, onPress, accessibilityLabel, accessibilityHint, flat = false, testID }: Props) {
   const base = [styles.card, !flat && shadows.card, style];
   if (onPress) {
     return (
       <Pressable
         onPress={onPress}
+        testID={testID}
         accessibilityRole="button"
         accessibilityLabel={accessibilityLabel}
         accessibilityHint={accessibilityHint}
@@ -28,7 +30,11 @@ export function Card({ children, style, onPress, accessibilityLabel, accessibili
       </Pressable>
     );
   }
-  return <View style={base}>{children}</View>;
+  return (
+    <View style={base} testID={testID}>
+      {children}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

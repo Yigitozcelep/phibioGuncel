@@ -98,6 +98,12 @@ export const shadows = {
   }) as ViewStyle,
 } as const;
 
+/**
+ * `useNativeDriver` for Animated: true on iOS/Android; the web renderer has
+ * no native animated module and would log a warning for every animation.
+ */
+export const USE_NATIVE_DRIVER = Platform.OS !== 'web';
+
 /** Minimum touch-target size (Apple HIG / Material). */
 export const TOUCH_TARGET = 44;
 

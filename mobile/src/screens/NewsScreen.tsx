@@ -57,6 +57,7 @@ function NewsList() {
               icon={loadMoreError ? 'refresh' : 'chevron-down'}
               onPress={() => void loadMoreNews()}
               style={styles.loadMore}
+              testID="news-load-more"
             />
           )
         ) : null}

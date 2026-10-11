@@ -23,6 +23,7 @@ export function ProductCard({ product, areaName, onPress, style }: ProductCardPr
     <Card
       onPress={onPress}
       style={style}
+      testID={`product-${product.slug}`}
       accessibilityLabel={`${product.name}${tagline ? `, ${tagline}` : ''}`}
       accessibilityHint={t.common.details}
     >
@@ -60,6 +61,7 @@ export function NewsCard({ item, onPress, style }: NewsCardProps) {
     <Card
       onPress={onPress}
       style={[styles.newsCard, style]}
+      testID={`news-${item.slug}`}
       accessibilityLabel={`${title}. ${category}${date ? `, ${date}` : ''}`}
       accessibilityHint={t.common.readMore}
     >
@@ -99,6 +101,7 @@ export function AreaCard({ area, onPress, style, horizontal = false }: AreaCardP
     <Card
       onPress={onPress}
       style={[horizontal ? styles.areaCardHorizontal : styles.areaCard, style]}
+      testID={`area-${area.key}`}
       accessibilityLabel={name}
       accessibilityHint={t.tabs.products}
     >

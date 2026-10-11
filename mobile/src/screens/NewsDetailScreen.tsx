@@ -57,6 +57,7 @@ export function NewsDetailScreen({ slug }: { slug: string }) {
   const shareButton = item ? (
     <Pressable
       onPress={() => void share()}
+      testID="news-share"
       accessibilityRole="button"
       accessibilityLabel={t.news.shareLabel}
       hitSlop={8}
@@ -71,7 +72,7 @@ export function NewsDetailScreen({ slug }: { slug: string }) {
     content = (
       <ScreenScroll>
         <ArticleHead item={news} />
-        <View style={styles.body}>
+        <View style={styles.body} testID="news-article">
           <Blocks blocks={news.blocks} />
         </View>
       </ScreenScroll>

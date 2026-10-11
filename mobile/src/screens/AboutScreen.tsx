@@ -45,16 +45,10 @@ function AboutBody({ bundle }: { bundle: Bundle }) {
         <Text style={styles.title} accessibilityRole="header">
           {title}
         </Text>
-        <Text style={styles.founded}>{t.about.founded}</Text>
       </View>
 
       <View style={screenStyles.padded}>
         <Blocks blocks={site.aboutBlocks} empty={<EmptyState title={t.empty.content} compact />} />
-      </View>
-
-      <View style={[screenStyles.padded, styles.certCard]}>
-        <Ionicons name="ribbon-outline" size={28} color={colors.primary} />
-        <Text style={styles.certText}>{t.about.certification}</Text>
       </View>
 
       {stats.length > 0 && (

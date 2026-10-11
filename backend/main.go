@@ -30,6 +30,7 @@ type config struct {
 	Port          string
 	DataDir       string
 	BaseURL       string
+	TrustProxy    bool
 	AdminUser     string
 	AdminPassword string
 	MaxUploadMB   int
@@ -42,6 +43,7 @@ func loadConfig() (config, error) {
 		Port:        env("PORT", "8080"),
 		DataDir:     env("DATA_DIR", "./data"),
 		BaseURL:     strings.TrimRight(env("BASE_URL", ""), "/"),
+		TrustProxy:  env("TRUST_PROXY", "0") == "1",
 		AdminUser:   env("ADMIN_USER", "admin"),
 		MaxUploadMB: 20,
 		Seed:        true,
@@ -112,7 +114,12 @@ func run(logger *log.Logger) error {
 
 	// First run: seed content.
 	if st.IsFirstRun() {
-		if cfg.Seed {
+		if st.HasAnyData() {
+			logger.Printf("warning: %s has content files but no site.json; keeping the existing content and creating an empty site (seed skipped)", cfg.DataDir)
+			if err := st.SetSite(emptySite()); err != nil {
+				return err
+			}
+		} else if cfg.Seed {
 			logger.Printf("first run: no site.json in %s, importing seed content", cfg.DataDir)
 			if _, err := seed.Run(st, seedfiles.Files, logger); err != nil {
 				return fmt.Errorf("seed: %w", err)
@@ -160,6 +167,7 @@ func run(logger *log.Logger) error {
 	limiter := auth.NewRateLimiter(5, 15*time.Minute)
 	srv := api.New(api.Config{
 		BaseURL:        cfg.BaseURL,
+		TrustProxy:     cfg.TrustProxy,
 		CORSOrigins:    cfg.CORSOrigins,
 		MaxUploadBytes: int64(cfg.MaxUploadMB) << 20,
 		AdminUI:        ui,

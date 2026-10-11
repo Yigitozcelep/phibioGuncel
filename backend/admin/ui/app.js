@@ -26,7 +26,8 @@ const app = {
   guard: null, // { isDirty() } set by editors
   lastHash: '#/dashboard',
   intended: null,
-  editorCache: null, // { hash, state } reused when the UI language changes
+  editorCache: null, // { hash, state } reused when the UI language changes or after a session expiry
+  preserveEditor: false, // set by the 401 handler so the login redirect does not drop editorCache
   siteAreas: [],
 };
 
@@ -73,6 +74,9 @@ api.onUnauthorized(() => {
   app.user = null;
   app.guard = null;
   app.intended = location.hash && location.hash !== '#/login' ? location.hash : null;
+  // Keep the open editor's state so nothing is lost: after signing in again the
+  // intended hash is restored and the editor reuses app.editorCache.
+  app.preserveEditor = Boolean(app.editorCache);
   toast(t('common.sessionExpired'), 'error');
   renderShell();
   navigate('#/login');
@@ -198,7 +202,11 @@ function renderRoute({ keepState = false } = {}) {
   }
   if (!keepState) {
     app.guard = null;
-    if (app.editorCache && app.editorCache.hash !== hash) app.editorCache = null;
+    if (app.preserveEditor && hash === '#/login') {
+      app.preserveEditor = false;
+    } else if (app.editorCache && app.editorCache.hash !== hash) {
+      app.editorCache = null;
+    }
   }
   app.lastHash = hash;
   window.scrollTo(0, 0);

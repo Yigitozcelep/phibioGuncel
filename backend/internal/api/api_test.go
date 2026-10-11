@@ -674,12 +674,16 @@ func TestBaseURLAndSecureCookie(t *testing.T) {
 		t.Fatalf("plain baseURL %q", got)
 	}
 	plain.RemoteAddr = "127.0.0.1:1234"
-	plain.Header.Set("X-Forwarded-For", "203.0.113.5, 10.0.0.1")
-	if ip := clientIP(plain); ip != "203.0.113.5" {
-		t.Fatalf("clientIP via proxy %q", ip)
+	plain.Header.Set("X-Forwarded-For", "203.0.113.5, 198.51.100.9")
+	if ip := clientIP(plain, true); ip != "198.51.100.9" {
+		t.Fatalf("clientIP via trusted proxy must use the last XFF entry, got %q", ip)
+	}
+	if ip := clientIP(plain, false); ip != "127.0.0.1" {
+		t.Fatalf("clientIP without TRUST_PROXY must ignore XFF, got %q", ip)
 	}
 	plain.RemoteAddr = "198.51.100.7:1234"
-	if ip := clientIP(plain); ip != "198.51.100.7" {
-		t.Fatalf("clientIP direct %q (XFF must be ignored)", ip)
+	plain.Header.Del("X-Forwarded-For")
+	if ip := clientIP(plain, true); ip != "198.51.100.7" {
+		t.Fatalf("clientIP direct %q", ip)
 	}
 }

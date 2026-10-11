@@ -117,6 +117,7 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const refresh = useCallback((): Promise<void> => {
+    newsCache.current.clear(); // detail screens must not keep stale articles after a refresh
     if (refreshPromise.current) return refreshPromise.current;
     const run = (async () => {
       setRefreshing(true);

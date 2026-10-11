@@ -75,7 +75,7 @@ derlemeleri için değer `eas.json` içindeki `build.<profil>.env` alanından ge
 üstteki TR/EN düğmesiyle dili değiştirir; seçim `phibio.lang` anahtarıyla
 saklanır. İçerik alanlarında aktif dil boşsa diğer dile düşülür (`L()`).
 
-### Uygulamanın içeriği nereden alır
+### Uygulama içeriği nereden alır
 
 * `GET /api/v1/bundle` → site ayarları, yayınlanmış ürünler, en yeni 20 haber.
 * Haber detayı `GET /api/v1/news/{slug}` ile istenir ve bellekte tutulur.

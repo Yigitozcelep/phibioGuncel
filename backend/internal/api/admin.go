@@ -78,7 +78,7 @@ func (s *Server) clearSessionCookie(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) handleLogin(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-store")
-	ip := clientIP(r)
+	ip := clientIP(r, s.cfg.TrustProxy)
 	if ok, retry := s.limiter.Allowed(ip); !ok {
 		w.Header().Set("Retry-After", fmt.Sprint(int(retry/time.Second)+1))
 		s.fail(w, r, http.StatusTooManyRequests, "rate_limited", M("Çok fazla başarısız deneme. Lütfen bir süre sonra tekrar deneyin.", "Too many failed attempts. Please try again later."))

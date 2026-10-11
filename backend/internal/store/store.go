@@ -38,6 +38,7 @@ type Store struct {
 	mu       sync.RWMutex
 	site     model.SiteSettings
 	siteSet  bool
+	anyData  bool
 	news     []model.News
 	products []model.Product
 	media    []model.Media
@@ -70,6 +71,15 @@ func (s *Store) IsFirstRun() bool {
 	return !s.siteSet
 }
 
+// HasAnyData reports whether any other collection file (news, products, media,
+// users) existed when the store was opened. Used to refuse re-seeding into a
+// data directory that only lost its site.json.
+func (s *Store) HasAnyData() bool {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return s.anyData
+}
+
 func (s *Store) load() error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -81,18 +91,23 @@ func (s *Store) load() error {
 	s.siteSet = ok
 	s.site.Normalize()
 
-	if _, err := readJSON(filepath.Join(s.dir, NewsFile), &s.news); err != nil {
+	okNews, err := readJSON(filepath.Join(s.dir, NewsFile), &s.news)
+	if err != nil {
 		return err
 	}
-	if _, err := readJSON(filepath.Join(s.dir, ProductsFile), &s.products); err != nil {
+	okProducts, err := readJSON(filepath.Join(s.dir, ProductsFile), &s.products)
+	if err != nil {
 		return err
 	}
-	if _, err := readJSON(filepath.Join(s.dir, MediaFile), &s.media); err != nil {
+	okMedia, err := readJSON(filepath.Join(s.dir, MediaFile), &s.media)
+	if err != nil {
 		return err
 	}
-	if _, err := readJSON(filepath.Join(s.dir, UsersFile), &s.users); err != nil {
+	okUsers, err := readJSON(filepath.Join(s.dir, UsersFile), &s.users)
+	if err != nil {
 		return err
 	}
+	s.anyData = okNews || okProducts || okMedia || okUsers
 	for i := range s.news {
 		s.news[i].Normalize()
 	}

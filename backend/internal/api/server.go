@@ -33,6 +33,7 @@ const (
 // Config holds the runtime options the API needs.
 type Config struct {
 	BaseURL        string   // public origin for absolute media URLs ("" = derive from request)
+	TrustProxy     bool     // trust X-Forwarded-For / X-Real-IP from the nearest proxy for rate limiting
 	CORSOrigins    []string // allowed origins for /api/v1 and /uploads; ["*"] = any
 	MaxUploadBytes int64
 	AdminUI        fs.FS // files served at /admin/ (index.html required)
@@ -68,6 +69,8 @@ func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /healthz", s.handleHealth)
+	mux.HandleFunc("GET /privacy", s.handleLegalPage("privacy"))
+	mux.HandleFunc("GET /imprint", s.handleLegalPage("imprint"))
 
 	// Public API.
 	mux.HandleFunc("GET /api/v1/site", s.handlePublicSite)
@@ -390,22 +393,26 @@ func isSecure(r *http.Request) bool {
 	return proto == "https"
 }
 
-// clientIP returns the caller's IP. X-Forwarded-For / X-Real-IP are honoured
-// only when the direct peer is a loopback or private address (i.e. a reverse
-// proxy on the same host or network), so clients cannot forge them.
-func clientIP(r *http.Request) string {
+// clientIP returns the caller's IP for rate limiting. Forwarding headers are
+// only honoured when trustProxy is set (TRUST_PROXY=1), and then the LAST
+// X-Forwarded-For entry is used: that is the value appended by the proxy in
+// front of this server and cannot be forged by the client, unlike the first.
+func clientIP(r *http.Request, trustProxy bool) string {
 	host, _, err := net.SplitHostPort(r.RemoteAddr)
 	if err != nil {
 		host = r.RemoteAddr
 	}
-	ip := net.ParseIP(host)
-	if ip != nil && (ip.IsLoopback() || ip.IsPrivate() || ip.IsUnspecified()) {
-		if xff := strings.TrimSpace(strings.Split(r.Header.Get("X-Forwarded-For"), ",")[0]); xff != "" {
-			return xff
+	if !trustProxy {
+		return host
+	}
+	if xff := r.Header.Get("X-Forwarded-For"); xff != "" {
+		parts := strings.Split(xff, ",")
+		if last := strings.TrimSpace(parts[len(parts)-1]); last != "" {
+			return last
 		}
-		if xr := strings.TrimSpace(r.Header.Get("X-Real-IP")); xr != "" {
-			return xr
-		}
+	}
+	if xr := strings.TrimSpace(r.Header.Get("X-Real-IP")); xr != "" {
+		return xr
 	}
 	return host
 }

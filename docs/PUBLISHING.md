@@ -25,10 +25,7 @@ Mağazalar bir **gizlilik politikası URL'si** ister. Backend bu sayfayı otomat
 * `expo.ios.bundleIdentifier` ve `expo.android.package` → `de.phibio.app` (ilk yayından sonra **değiştirilemez**)
 * `expo.version` → kullanıcıya görünen sürüm (1.0.0). Her mağaza gönderiminde `ios.buildNumber` ve `android.versionCode` artmalıdır (EAS `autoIncrement` bunu production profilinde otomatik yapar).
 
-`mobile/.env` dosyasında üretim API adresini yazın:
-```
-EXPO_PUBLIC_API_URL=https://api.phibio.de
-```
+Üretim API adresi `mobile/eas.json` içindeki `preview` ve `production` profillerinin `env.EXPO_PUBLIC_API_URL` alanında tanımlıdır (`https://api.phibio.de`); farklı bir alan adı kullanıyorsanız orayı değiştirin. `mobile/.env` yalnızca yerel geliştirme içindir (localhost).
 
 ### 4. EAS ile derleme
 ```bash
@@ -55,7 +52,7 @@ npx eas-cli@latest submit --platform android --latest
 | Öğe | App Store | Google Play |
 |---|---|---|
 | Uygulama adı | Phibio | Phibio |
-| Alt başlık / kısa açıklama | "Biotechnology Inspired by Nature" | 80 karakter |
+| Alt başlık / kısa açıklama | "Inspired by Nature" (App Store alt başlığı en fazla 30 karakter) | "Biotechnology Inspired by Nature" (en fazla 80 karakter) |
 | Açıklama | TR ve EN (mağaza dillerini ikisi için de ekleyin) | TR ve EN |
 | Kategori | Medical (veya Business) | Medical |
 | Ekran görüntüleri | 6.7" (1290×2796) ve 6.5" (1284×2778) zorunlu; iPad 13" (2064×2752) `supportsTablet` açık olduğu için zorunlu | Telefon en az 2 adet (1080×1920 uygun), 512×512 ikon, 1024×500 özellik grafiği |
@@ -93,7 +90,7 @@ The stores require a privacy policy URL; the server serves `https://api.phibio.d
 
 ### 3. Configure the app
 In `mobile/app.json`: `name` = Phibio, `ios.bundleIdentifier` / `android.package` = `de.phibio.app` (cannot change after the first release), `version` 1.0.0; build numbers auto-increment with the production profile.
-In `mobile/.env`: `EXPO_PUBLIC_API_URL=https://api.phibio.de`.
+The production API URL lives in `mobile/eas.json` (`env.EXPO_PUBLIC_API_URL` of the `preview` and `production` profiles); `mobile/.env` is for local development only.
 
 ### 4. Build with EAS
 ```bash
@@ -113,7 +110,7 @@ npx eas-cli@latest submit --platform android --latest
 Fill `submit.production` in `eas.json` (Apple ID, App Store Connect app ID, team ID; Google service-account JSON saved as `mobile/google-service-account.json`, git-ignored). Create the app records first in App Store Connect and Play Console; Google requires the very first upload to be done manually in the console.
 
 ### 6. Store listing checklist
-Name "Phibio"; subtitle "Biotechnology Inspired by Nature"; descriptions in EN and TR; category Medical; screenshots (iPhone 6.7" + 6.5", iPad 13" because tablets are supported; Android phone ≥ 2, 512×512 icon, 1024×500 feature graphic); privacy policy URL `https://api.phibio.de/privacy`; data collection: none (no analytics, no tracking); age rating 4+ / IARC questionnaire; contact info@phibio.de.
+Name "Phibio"; App Store subtitle "Inspired by Nature" (30-character limit), Play short description "Biotechnology Inspired by Nature"; descriptions in EN and TR; category Medical; screenshots (iPhone 6.7" + 6.5", iPad 13" because tablets are supported; Android phone ≥ 2, 512×512 icon, 1024×500 feature graphic); privacy policy URL `https://api.phibio.de/privacy`; data collection: none (no analytics, no tracking); age rating 4+ / IARC questionnaire; contact info@phibio.de.
 
 ### 7. Updates
 Content changes never need a new build – they are made in the admin panel. For code changes bump `expo.version`, then build and submit again.

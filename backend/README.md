@@ -53,6 +53,7 @@ go run .
 | `ADMIN_PASSWORD` | *(empty)* | initial admin password (first run only); empty = generated and logged once |
 | `MAX_UPLOAD_MB` | `20` | upload size limit |
 | `CORS_ORIGINS` | `*` | allowed origins for `/api/v1` and `/uploads` (comma-separated) |
+| `TRUST_PROXY` | `0` | set to `1` only when the server runs behind a reverse proxy that appends `X-Forwarded-For`; the login rate limiter then uses the last forwarded IP instead of the socket address |
 | `SEED` | `1` | import seed content on first run (`0` = start empty) |
 
 The effective configuration (without the password) is printed at start.
@@ -147,3 +148,7 @@ backend/
 ├── internal/api            routes, middleware, handlers, ImageRef resolution
 └── internal/seed           first-run importer
 ```
+
+## Public legal pages
+
+`GET /privacy` and `GET /imprint` render the privacy policy and the imprint edited in the admin panel (Site settings) as plain HTML, in Turkish or English (`?lang=tr` / `?lang=en`, default from `Accept-Language`). Use `https://<your-host>/privacy` as the privacy policy URL in App Store Connect and Google Play Console.

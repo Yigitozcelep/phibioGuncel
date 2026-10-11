@@ -1,0 +1,486 @@
+{
+  "images": {
+    "hero": { "file": "hero.jpg", "alt": { "tr": "Phibio – laboratuvar ortamında hyalüronik asit bazlı viskoelastik çözümler", "en": "Phibio – hyaluronic acid-based viscoelastic solutions in a laboratory setting" } },
+    "viscophi": { "file": "viscophi.jpg", "alt": { "tr": "ViscoPhi™ intra-artiküler viskoelastik implant, kullanıma hazır şırınga", "en": "ViscoPhi™ intra-articular viscoelastic implant, prefilled syringe" } },
+    "visocu": { "file": "visocu.jpg", "alt": { "tr": "VisOcu™ oftalmik viskoelastik ürün", "en": "VisOcu™ ophthalmic viscoelastic device" } },
+    "philexir": { "file": "philexir.jpg", "alt": { "tr": "PhilExir™ hyalüronik asit dermal dolgu serisi", "en": "PhilExir™ hyaluronic acid dermal filler range" } },
+    "area-orthopaedics": { "file": "area-orthopaedics.jpg", "alt": { "tr": "Ortopedi – eklem sağlığı", "en": "Orthopaedics – joint health" } },
+    "area-ophthalmology": { "file": "area-ophthalmology.jpg", "alt": { "tr": "Oftalmoloji – göz cerrahisi", "en": "Ophthalmology – eye surgery" } },
+    "area-dermatology": { "file": "area-dermatology.jpg", "alt": { "tr": "Dermatoloji – estetik dermatoloji", "en": "Dermatology – aesthetic dermatology" } },
+    "news-app": { "file": "news-app.jpg", "alt": { "tr": "Phibio mobil uygulaması", "en": "Phibio mobile app" } },
+    "news-viscophi": { "file": "news-viscophi.jpg", "alt": { "tr": "ViscoPhi™ – hayvansal kaynaklı olmayan hyalüronik asit", "en": "ViscoPhi™ – non-animal hyaluronic acid" } },
+    "news-events": { "file": "news-events.jpg", "alt": { "tr": "Uluslararası medikal fuarlar", "en": "International medical exhibitions" } }
+  },
+  "site": {
+    "companyName": "Phibio GmbH",
+    "slogan": { "tr": "Pure and Cure", "en": "Pure and Cure" },
+    "heroTitle": { "tr": "Doğadan İlham Alan Biyoteknoloji", "en": "Biotechnology Inspired by Nature" },
+    "heroSubtitle": {
+      "tr": "Ortopedi, oftalmoloji ve dermatoloji için hyalüronik asit bazlı viskoelastik çözümler. 2012'den bu yana Frankfurt am Main'de.",
+      "en": "Hyaluronic acid-based viscoelastic solutions for orthopaedics, ophthalmology and dermatology. In Frankfurt am Main since 2012."
+    },
+    "heroImage": "@image:hero",
+    "aboutTitle": { "tr": "Hakkımızda", "en": "About Us" },
+    "aboutBlocks": [
+      { "type": "heading", "text": { "tr": "Taahhüdümüz ve Odağımız", "en": "Our Commitment and Focus" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "2012 yılındaki kuruluşumuzdan bu yana Phibio, ileri viskoelastik çözümlerle hasta bakımını iyileştirmeye kendini adamıştır. Yıllar içinde şirketimiz, hyalüronik asit bazlı tıbbi cihazların ve tedavi çözümlerinin araştırma-geliştirmesine, üretimine ve pazarlanmasına odaklanmıştır.",
+          "en": "Since our establishment in 2012, Phibio has been committed to improving patient care through advanced viscoelastic solutions. Over the years the company has focused on the research and development, production and marketing of hyaluronic acid-based medical devices and therapeutic solutions."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      { "type": "heading", "text": { "tr": "Kalite ve Küresel Varlık", "en": "Quality and Global Presence" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "Çalışmalarımız üç ana tıbbi cihaz alanını kapsar: ortopedi, oftalmoloji ve dermatoloji. ISO standartlarına tam uyumluyuz ve MDR onaylı CE sertifikalarına sahibiz. Genel merkezimiz Almanya'nın Frankfurt am Main şehrindedir ve uluslararası alanda büyümeyi hedefliyoruz.",
+          "en": "Our work covers three major medical device areas: orthopaedics, ophthalmology and dermatology. We are fully compliant with ISO standards and hold MDR-approved CE certificates. Our head office is in Frankfurt am Main, Germany, and we aim to expand internationally."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      { "type": "heading", "text": { "tr": "Temel Teknolojimiz", "en": "Our Core Technology" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "Temel teknolojimiz hyalüronik asittir (HA). Viskoelastik çözümler alanında uzmanız: göz içi ve eklem içi viskoelastikler ile dermal dolgular.",
+          "en": "Our core technology is hyaluronic acid (HA). We specialise in viscoelastic solutions: intra-ocular and intra-articular viscoelastics as well as dermal fillers."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      }
+    ],
+    "stats": [
+      { "value": "14+", "label": { "tr": "Yıllık üretim ve araştırma", "en": "Years of production and research" } },
+      { "value": "1", "label": { "tr": "Patentli formülasyon", "en": "Patented formulation" } },
+      { "value": "100+", "label": { "tr": "Bilimsel çalışma", "en": "Scientific studies" } }
+    ],
+    "areas": [
+      {
+        "key": "orthopaedics",
+        "name": { "tr": "Ortopedi", "en": "Orthopaedics" },
+        "description": { "tr": "Eklem hastalıkları için intra-artiküler viskoelastik çözümler", "en": "Intra-articular viscoelastic solutions for joint disorders" },
+        "image": "@image:area-orthopaedics"
+      },
+      {
+        "key": "ophthalmology",
+        "name": { "tr": "Oftalmoloji", "en": "Ophthalmology" },
+        "description": { "tr": "Göz cerrahisi için oftalmik viskoelastik ürünler", "en": "Ophthalmic viscoelastic devices for eye surgery" },
+        "image": "@image:area-ophthalmology"
+      },
+      {
+        "key": "dermatology",
+        "name": { "tr": "Dermatoloji", "en": "Dermatology" },
+        "description": { "tr": "Hyalüronik asit bazlı dermal dolgular", "en": "Hyaluronic acid dermal fillers" },
+        "image": "@image:area-dermatology"
+      }
+    ],
+    "contact": {
+      "email": "info@phibio.de",
+      "phone": "+496940767397",
+      "phoneDisplay": "069 40767397",
+      "addressLines": ["Klingerstraße 24", "60313 Frankfurt am Main", "Germany"],
+      "mapUrl": "https://maps.google.com/?q=Klingerstra%C3%9Fe+24%2C+60313+Frankfurt+am+Main%2C+Germany",
+      "hours": { "tr": "Hafta içi, mesai saatlerinde", "en": "Weekdays, during business hours" },
+      "website": "https://www.phibio.de"
+    },
+    "social": [],
+    "imprint": [
+      { "type": "heading", "text": { "tr": "Künye", "en": "Imprint" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "Phibio GmbH\nKlingerstraße 24\n60313 Frankfurt am Main\nAlmanya",
+          "en": "Phibio GmbH\nKlingerstraße 24\n60313 Frankfurt am Main\nGermany"
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      {
+        "type": "list",
+        "text": { "tr": "", "en": "" },
+        "items": [
+          { "tr": "Genel Müdür: Osman Burak Konukoglu", "en": "Managing Director: Osman Burak Konukoglu" },
+          { "tr": "Ticaret sicili: Amtsgericht Frankfurt am Main, HRB 96114", "en": "Commercial register: Amtsgericht Frankfurt am Main, HRB 96114" },
+          { "tr": "Telefon: 069 40767397", "en": "Phone: 069 40767397" },
+          { "tr": "E-posta: info@phibio.de", "en": "E-mail: info@phibio.de" },
+          { "tr": "USt-IdNr. (KDV kimlik numarası): (tamamlanacak)", "en": "USt-IdNr. (VAT ID): (to be completed)" }
+        ],
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "İçerik sorumluluğu: Phibio GmbH. Bu uygulamadaki bilgiler özenle hazırlanmıştır; buna rağmen içeriğin güncelliği, doğruluğu ve eksiksizliği için garanti verilemez.",
+          "en": "Responsible for content: Phibio GmbH. The information in this app has been compiled with care; nevertheless no guarantee can be given for the topicality, accuracy or completeness of the content."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      { "type": "button", "text": { "tr": "", "en": "" }, "url": "mailto:info@phibio.de", "caption": { "tr": "", "en": "" }, "label": { "tr": "Bize e-posta gönderin", "en": "Send us an e-mail" } }
+    ],
+    "privacy": [
+      { "type": "heading", "text": { "tr": "Gizlilik Politikası", "en": "Privacy Policy" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "Phibio mobil uygulaması kişisel veri toplamaz. Uygulama yalnızca Phibio sunucusundan herkese açık içerikleri (haberler, ürün bilgileri ve şirket bilgileri) indirir ve cihazınızda çevrimdışı okuma için saklar.",
+          "en": "The Phibio mobile app does not collect personal data. The app only downloads public content (news, product information and company details) from the Phibio server and stores it on your device for offline reading."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      {
+        "type": "list",
+        "text": { "tr": "", "en": "" },
+        "items": [
+          { "tr": "Analitik veya takip araçları kullanılmaz.", "en": "No analytics or tracking tools are used." },
+          { "tr": "Reklam gösterilmez ve üçüncü taraflarla veri paylaşılmaz.", "en": "No advertising is shown and no data is shared with third parties." },
+          { "tr": "Hesap oluşturmanız veya giriş yapmanız gerekmez.", "en": "No account or sign-in is required." },
+          { "tr": "Dil tercihiniz yalnızca cihazınızda saklanır.", "en": "Your language preference is stored only on your device." }
+        ],
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "İçerik indirilirken sunucumuz, bağlantının sağlanabilmesi için teknik olarak gerekli olan IP adresinizi geçici olarak işler. Bu veriler profil oluşturmak için kullanılmaz. Uygulamadan arama, e-posta veya harita gibi başka bir uygulamayı açtığınızda, ilgili uygulamanın gizlilik koşulları geçerlidir.",
+          "en": "When content is downloaded, our server temporarily processes your IP address, which is technically required to establish the connection. This data is not used to build profiles. When you open another app from this app, such as phone, e-mail or maps, that app's privacy terms apply."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      {
+        "type": "paragraph",
+        "text": {
+          "tr": "Veri sorumlusu: Phibio GmbH, Klingerstraße 24, 60313 Frankfurt am Main, Almanya. Gizlilikle ilgili sorularınız için info@phibio.de adresine yazabilirsiniz.",
+          "en": "Data controller: Phibio GmbH, Klingerstraße 24, 60313 Frankfurt am Main, Germany. For questions about privacy, please write to info@phibio.de."
+        },
+        "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+      },
+      { "type": "button", "text": { "tr": "", "en": "" }, "url": "mailto:info@phibio.de", "caption": { "tr": "", "en": "" }, "label": { "tr": "Gizlilik sorusu gönder", "en": "Ask a privacy question" } }
+    ]
+  },
+  "products": [
+    {
+      "slug": "viscophi",
+      "name": "ViscoPhi™",
+      "area": "orthopaedics",
+      "tagline": { "tr": "İntra-artiküler viskoelastik implant", "en": "Intra-articular viscoelastic implant" },
+      "summary": {
+        "tr": "Osteoartrit gibi eklem hastalıkları için kullanıma hazır, önceden doldurulmuş şırıngada intra-artiküler viskoelastik implant jeli.",
+        "en": "Intra-articular viscoelastic implant gel for joint disorders such as osteoarthritis, supplied in a prefilled, ready-to-use syringe."
+      },
+      "blocks": [
+        { "type": "heading", "text": { "tr": "Eklem sağlığı için viskoelastik destek", "en": "Viscoelastic support for joint health" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "ViscoPhi™, osteoartrit gibi eklem hastalıklarında kullanılmak üzere geliştirilmiş intra-artiküler bir viskoelastik implant jelidir. Kullanıma hazır, önceden doldurulmuş şırınga içinde sunulur.",
+            "en": "ViscoPhi™ is an intra-articular viscoelastic implant gel developed for joint disorders such as osteoarthritis. It is supplied in a prefilled, ready-to-use syringe."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Ürün, lineer, çapraz bağlı ve kombine hyalüronik asit formlarında sunulur. Hayvansal kaynaklı olmayan hyalüronik asit, yüksek viskozite ve yüksek moleküler ağırlık ile öne çıkar.",
+            "en": "The product is available in linear, crosslinked and combined hyaluronic acid forms. Its non-animal hyaluronic acid stands out with high viscosity and high molecular weight."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "image", "text": { "tr": "", "en": "" }, "image": "@image:viscophi", "caption": { "tr": "ViscoPhi™ – kullanıma hazır, önceden doldurulmuş şırınga", "en": "ViscoPhi™ – ready-to-use prefilled syringe" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "ViscoPhi™, Sınıf III tıbbi cihaz olarak MDR onaylı CE sertifikasına sahiptir ve yalnızca sağlık profesyonelleri tarafından uygulanmak üzere tasarlanmıştır.",
+            "en": "ViscoPhi™ holds an MDR-approved CE certificate as a Class III medical device and is designed to be administered by healthcare professionals only."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        }
+      ],
+      "features": [
+        { "tr": "Sınıf III tıbbi cihaz", "en": "Class III medical device" },
+        { "tr": "Lineer, çapraz bağlı ve kombine hyalüronik asit formları", "en": "Linear, crosslinked and combined hyaluronic acid forms" },
+        { "tr": "Hayvansal kaynaklı olmayan hyalüronik asit", "en": "Non-animal source hyaluronic acid" },
+        { "tr": "Yüksek viskozite ve yüksek moleküler ağırlık", "en": "High viscosity and high molecular weight" },
+        { "tr": "Kullanıma hazır, önceden doldurulmuş şırınga", "en": "Prefilled, ready-to-use syringe" },
+        { "tr": "MDR onaylı CE sertifikası", "en": "MDR-approved CE certificate" }
+      ],
+      "specs": [
+        { "label": { "tr": "Cihaz sınıfı", "en": "Device class" }, "value": { "tr": "Sınıf III", "en": "Class III" } },
+        { "label": { "tr": "Etken madde", "en": "Active substance" }, "value": { "tr": "Hyalüronik asit (lineer, çapraz bağlı, kombine)", "en": "Hyaluronic acid (linear, crosslinked, combined)" } },
+        { "label": { "tr": "Kaynak", "en": "Source" }, "value": { "tr": "Hayvansal kaynaklı değil", "en": "Non-animal" } },
+        { "label": { "tr": "Sunum", "en": "Presentation" }, "value": { "tr": "Önceden doldurulmuş şırınga", "en": "Prefilled syringe" } },
+        { "label": { "tr": "Sertifikasyon", "en": "Certification" }, "value": { "tr": "MDR onaylı CE", "en": "MDR-approved CE" } }
+      ],
+      "cover": "@image:viscophi",
+      "gallery": ["@image:viscophi", "@image:area-orthopaedics"],
+      "documents": [],
+      "order": 1,
+      "status": "published"
+    },
+    {
+      "slug": "visocu",
+      "name": "VisOcu™",
+      "area": "ophthalmology",
+      "tagline": { "tr": "Oftalmik viskoelastik ürün (OVD)", "en": "Ophthalmic viscoelastic device (OVD)" },
+      "summary": {
+        "tr": "Yüksek saflıkta hyalüronik asit (HA) ve HPMC içeren steril, kohezif, izotonik ve pirojensiz viskoelastik preparat; göz cerrahisinde dokuları korumak için.",
+        "en": "Sterile, cohesive, isotonic and pyrogen-free viscoelastic preparation of highly purified hyaluronic acid (HA) and HPMC for protecting ocular tissues during eye surgery."
+      },
+      "blocks": [
+        { "type": "heading", "text": { "tr": "Göz cerrahisi için oküler çözümler", "en": "Ocular solutions for eye surgery" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "VisOcu™, yüksek saflıkta hyalüronik asit (HA) ve hidroksipropil metilselüloz (HPMC) içeren steril, kohezif, izotonik ve pirojensiz bir viskoelastik preparattır.",
+            "en": "VisOcu™ is a sterile, cohesive, isotonic and pyrogen-free viscoelastic preparation of highly purified hyaluronic acid (HA) and hydroxypropyl methylcellulose (HPMC)."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Katarakt cerrahisi gibi oftalmik operasyonlar sırasında oküler dokuları kayganlaştırmak, desteklemek ve korumak amacıyla kullanılır.",
+            "en": "It is used to lubricate, support and protect ocular tissues during ophthalmic surgery, for example cataract surgery."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "image", "text": { "tr": "", "en": "" }, "image": "@image:visocu", "caption": { "tr": "VisOcu™ – sekiz farklı dozajda", "en": "VisOcu™ – available in eight dosages" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Sınıf IIb tıbbi cihaz olan VisOcu™, farklı cerrahi ihtiyaçlara uyum sağlamak için sekiz farklı dozajda sunulur.",
+            "en": "A Class IIb medical device, VisOcu™ is offered in eight dosages to suit different surgical needs."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        }
+      ],
+      "features": [
+        { "tr": "Sınıf IIb tıbbi cihaz", "en": "Class IIb medical device" },
+        { "tr": "Yüksek saflıkta hyalüronik asit (HA) ve HPMC", "en": "Highly purified hyaluronic acid (HA) and HPMC" },
+        { "tr": "Steril, kohezif, izotonik ve pirojensiz", "en": "Sterile, cohesive, isotonic and pyrogen-free" },
+        { "tr": "Sekiz farklı dozaj", "en": "Available in eight dosages" },
+        { "tr": "Katarakt cerrahisi dahil oftalmik operasyonlar için", "en": "For ophthalmic surgery including cataract surgery" }
+      ],
+      "specs": [
+        { "label": { "tr": "Cihaz sınıfı", "en": "Device class" }, "value": { "tr": "Sınıf IIb", "en": "Class IIb" } },
+        { "label": { "tr": "Bileşim", "en": "Composition" }, "value": { "tr": "Hyalüronik asit (HA) + HPMC", "en": "Hyaluronic acid (HA) + HPMC" } },
+        { "label": { "tr": "Form", "en": "Form" }, "value": { "tr": "Steril, kohezif, izotonik, pirojensiz viskoelastik", "en": "Sterile, cohesive, isotonic, pyrogen-free viscoelastic" } },
+        { "label": { "tr": "Dozajlar", "en": "Dosages" }, "value": { "tr": "8 farklı dozaj", "en": "8 dosages" } },
+        { "label": { "tr": "Kullanım alanı", "en": "Intended use" }, "value": { "tr": "Oftalmik cerrahide oküler dokuların korunması", "en": "Protection of ocular tissues in ophthalmic surgery" } }
+      ],
+      "cover": "@image:visocu",
+      "gallery": ["@image:visocu", "@image:area-ophthalmology"],
+      "documents": [],
+      "order": 2,
+      "status": "published"
+    },
+    {
+      "slug": "philexir",
+      "name": "PhilExir™",
+      "area": "dermatology",
+      "tagline": { "tr": "Dermal dolgular", "en": "Dermal fillers" },
+      "summary": {
+        "tr": "Estetik dermatoloji için hyalüronik asit bazlı dermal dolgu serisi: yüz hacmi, çizgiler ve kırışıklıklar.",
+        "en": "Hyaluronic acid dermal filler range for aesthetic dermatology: facial volume, lines and wrinkles."
+      },
+      "blocks": [
+        { "type": "heading", "text": { "tr": "Estetik dermatoloji için dermal dolgular", "en": "Dermal fillers for aesthetic dermatology" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "PhilExir™, estetik dermatolojide yüz hacmi, çizgiler ve kırışıklıklar için geliştirilmiş hyalüronik asit bazlı bir dermal dolgu serisidir.",
+            "en": "PhilExir™ is a hyaluronic acid-based dermal filler range developed for aesthetic dermatology, addressing facial volume, lines and wrinkles."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Seri, çapraz bağlı ve hayvansal kaynaklı olmayan hyalüronik asit ile üretilir ve CE işaretlidir. Uygulama yalnızca eğitimli sağlık profesyonelleri tarafından yapılmalıdır.",
+            "en": "The range is produced with crosslinked, non-animal hyaluronic acid and is CE-marked. It is intended for use by trained healthcare professionals only."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "image", "text": { "tr": "", "en": "" }, "image": "@image:philexir", "caption": { "tr": "PhilExir™ dermal dolgu serisi", "en": "PhilExir™ dermal filler range" }, "label": { "tr": "", "en": "" } }
+      ],
+      "features": [
+        { "tr": "Hyalüronik asit bazlı dermal dolgu serisi", "en": "Hyaluronic acid dermal filler range" },
+        { "tr": "Çapraz bağlı hyalüronik asit", "en": "Crosslinked hyaluronic acid" },
+        { "tr": "Hayvansal kaynaklı değil", "en": "Non-animal origin" },
+        { "tr": "CE işaretli", "en": "CE-marked" },
+        { "tr": "Yüz hacmi, çizgiler ve kırışıklıklar için", "en": "For facial volume, lines and wrinkles" }
+      ],
+      "specs": [
+        { "label": { "tr": "Ürün türü", "en": "Product type" }, "value": { "tr": "Dermal dolgu", "en": "Dermal filler" } },
+        { "label": { "tr": "Etken madde", "en": "Active substance" }, "value": { "tr": "Çapraz bağlı hyalüronik asit", "en": "Crosslinked hyaluronic acid" } },
+        { "label": { "tr": "Kaynak", "en": "Source" }, "value": { "tr": "Hayvansal kaynaklı değil", "en": "Non-animal" } },
+        { "label": { "tr": "Sertifikasyon", "en": "Certification" }, "value": { "tr": "CE işaretli", "en": "CE-marked" } }
+      ],
+      "cover": "@image:philexir",
+      "gallery": ["@image:philexir", "@image:area-dermatology"],
+      "documents": [],
+      "order": 3,
+      "status": "published"
+    }
+  ],
+  "news": [
+    {
+      "slug": "phibio-mobile-app-is-live",
+      "title": { "tr": "Phibio mobil uygulaması yayında", "en": "Phibio mobile app is live" },
+      "summary": {
+        "tr": "Ürünlerimiz, haberlerimiz ve iletişim bilgilerimiz artık cebinizde. Uygulamada neler bulacağınızı anlatıyoruz.",
+        "en": "Our products, news and contact details are now in your pocket. Here is what you will find in the app."
+      },
+      "cover": "@image:news-app",
+      "category": "news",
+      "tags": ["uygulama", "app"],
+      "featured": true,
+      "status": "published",
+      "publishedAt": "2026-09-01T09:00:00Z",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Phibio mobil uygulaması App Store ve Google Play'de yayında. Uygulama, web sitemizin yapısını takip eder ve şirketimizle ilgili güncel bilgileri Türkçe ve İngilizce olarak sunar.",
+            "en": "The Phibio mobile app is now available on the App Store and Google Play. The app follows the structure of our website and presents up-to-date information about our company in Turkish and English."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "heading", "text": { "tr": "Uygulamada neler var?", "en": "What is in the app?" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "list",
+          "text": { "tr": "", "en": "" },
+          "items": [
+            { "tr": "Ürünler: ViscoPhi™, VisOcu™ ve PhilExir™ için özellikler ve teknik bilgiler", "en": "Products: features and technical details for ViscoPhi™, VisOcu™ and PhilExir™" },
+            { "tr": "Haberler: şirket duyuruları, ürün haberleri ve etkinlikler", "en": "News: company announcements, product news and events" },
+            { "tr": "Hakkımızda: odağımız, kalite yaklaşımımız ve çalışma alanlarımız", "en": "About us: our focus, our approach to quality and our areas of work" },
+            { "tr": "İletişim: tek dokunuşla arama, e-posta ve harita", "en": "Contact: one-tap call, e-mail and map" }
+          ],
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "İçerik otomatik olarak güncellenir; en son görüntülediğiniz içerik çevrimdışıyken de okunabilir. Dil tercihinizi uygulamanın üst kısmından istediğiniz zaman değiştirebilirsiniz.",
+            "en": "Content updates automatically, and what you last viewed stays readable while you are offline. You can switch the language at any time from the top of the app."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "quote",
+          "text": {
+            "tr": "Amacımız, iş ortaklarımızın ve sağlık profesyonellerinin ihtiyaç duydukları bilgiye her yerden kolayca ulaşmasını sağlamak.",
+            "en": "Our aim is to make it easy for our partners and healthcare professionals to reach the information they need, wherever they are."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "button", "text": { "tr": "", "en": "" }, "url": "https://www.phibio.de", "caption": { "tr": "", "en": "" }, "label": { "tr": "Web sitemizi ziyaret edin", "en": "Visit our website" } }
+      ]
+    },
+    {
+      "slug": "viscophi-non-animal-hyaluronic-acid-for-joint-health",
+      "title": { "tr": "ViscoPhi™: eklem sağlığı için hayvansal kaynaklı olmayan hyalüronik asit", "en": "ViscoPhi™: non-animal hyaluronic acid for joint health" },
+      "summary": {
+        "tr": "Sınıf III intra-artiküler viskoelastik implantımız ViscoPhi™'nin öne çıkan özelliklerine yakından bakıyoruz.",
+        "en": "A closer look at the key characteristics of ViscoPhi™, our Class III intra-articular viscoelastic implant."
+      },
+      "cover": "@image:news-viscophi",
+      "category": "product",
+      "tags": ["ViscoPhi", "ortopedi", "orthopaedics"],
+      "featured": false,
+      "status": "published",
+      "publishedAt": "2026-09-20T09:00:00Z",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "ViscoPhi™, osteoartrit gibi eklem hastalıkları için geliştirilmiş intra-artiküler bir viskoelastik implant jelidir. Kullanıma hazır, önceden doldurulmuş şırıngada sunulur.",
+            "en": "ViscoPhi™ is an intra-articular viscoelastic implant gel developed for joint disorders such as osteoarthritis. It comes in a prefilled, ready-to-use syringe."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "heading", "text": { "tr": "Hayvansal kaynaklı olmayan hyalüronik asit", "en": "Hyaluronic acid from a non-animal source" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "ViscoPhi™'de kullanılan hyalüronik asit hayvansal kaynaklı değildir. Ürün lineer, çapraz bağlı ve kombine hyalüronik asit formlarında sunulur; yüksek viskozite ve yüksek moleküler ağırlık ile karakterizedir.",
+            "en": "The hyaluronic acid used in ViscoPhi™ is of non-animal origin. The product is available in linear, crosslinked and combined hyaluronic acid forms and is characterised by high viscosity and high molecular weight."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "image", "text": { "tr": "", "en": "" }, "image": "@image:viscophi", "caption": { "tr": "ViscoPhi™ – önceden doldurulmuş şırınga", "en": "ViscoPhi™ – prefilled syringe" }, "label": { "tr": "", "en": "" } },
+        { "type": "heading", "text": { "tr": "Öne çıkan özellikler", "en": "Key characteristics" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "list",
+          "text": { "tr": "", "en": "" },
+          "items": [
+            { "tr": "Sınıf III tıbbi cihaz, MDR onaylı CE sertifikası", "en": "Class III medical device with an MDR-approved CE certificate" },
+            { "tr": "Lineer, çapraz bağlı ve kombine hyalüronik asit formları", "en": "Linear, crosslinked and combined hyaluronic acid forms" },
+            { "tr": "Yüksek viskozite ve yüksek moleküler ağırlık", "en": "High viscosity and high molecular weight" },
+            { "tr": "Kullanıma hazır, önceden doldurulmuş şırınga", "en": "Prefilled, ready-to-use syringe" }
+          ],
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Ayrıntılı bilgi için Ürünler sekmesindeki ViscoPhi™ sayfasını inceleyebilir veya bizimle iletişime geçebilirsiniz.",
+            "en": "For more details, see the ViscoPhi™ page in the Products tab or get in touch with us."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        }
+      ]
+    },
+    {
+      "slug": "phibio-at-international-medical-exhibitions",
+      "title": { "tr": "Phibio uluslararası medikal fuarlarda", "en": "Phibio at international medical exhibitions" },
+      "summary": {
+        "tr": "Yıl boyunca sektör fuarlarında iş ortaklarımız ve sağlık profesyonelleriyle bir araya geliyoruz.",
+        "en": "Throughout the year we meet partners and healthcare professionals at industry exhibitions."
+      },
+      "cover": "@image:news-events",
+      "category": "event",
+      "tags": ["etkinlik", "events"],
+      "featured": false,
+      "status": "published",
+      "publishedAt": "2026-10-05T09:00:00Z",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Phibio olarak yıl boyunca ortopedi, oftalmoloji ve dermatoloji alanlarındaki uluslararası medikal fuarlara katılıyoruz. Bu etkinlikler, ürünlerimizi tanıtmak ve sektördeki gelişmeleri yakından takip etmek için önemli bir fırsat sunuyor.",
+            "en": "Throughout the year, Phibio takes part in international medical exhibitions in the fields of orthopaedics, ophthalmology and dermatology. These events are an important opportunity to present our products and follow developments in the industry."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "heading", "text": { "tr": "Standımızda neler bulabilirsiniz?", "en": "What you will find at our stand" }, "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" } },
+        {
+          "type": "list",
+          "text": { "tr": "", "en": "" },
+          "items": [
+            { "tr": "ViscoPhi™, VisOcu™ ve PhilExir™ ürün bilgileri", "en": "Product information on ViscoPhi™, VisOcu™ and PhilExir™" },
+            { "tr": "Hyalüronik asit teknolojimiz hakkında uzman görüşmeleri", "en": "Expert conversations about our hyaluronic acid technology" },
+            { "tr": "Distribütörlük ve iş birliği fırsatları", "en": "Distribution and partnership opportunities" }
+          ],
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "quote",
+          "text": {
+            "tr": "Yüz yüze görüşmeler, iş ortaklarımızın ihtiyaçlarını anlamanın en iyi yolu olmaya devam ediyor.",
+            "en": "Face-to-face meetings remain the best way to understand the needs of our partners."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "tr": "Katılacağımız etkinlikler ve randevu talepleri için bizimle iletişime geçebilirsiniz. Güncel duyuruları bu uygulamanın Haberler bölümünde paylaşmaya devam edeceğiz.",
+            "en": "Contact us for the events we will be attending and to arrange a meeting. We will keep sharing current announcements in the News section of this app."
+          },
+          "caption": { "tr": "", "en": "" }, "label": { "tr": "", "en": "" }
+        },
+        { "type": "button", "text": { "tr": "", "en": "" }, "url": "mailto:info@phibio.de", "caption": { "tr": "", "en": "" }, "label": { "tr": "Randevu talep edin", "en": "Request a meeting" } }
+      ]
+    }
+  ]
+}
